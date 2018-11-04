@@ -31,7 +31,7 @@ class Solution:
         else:
             pass
         return solu_index
-
+# 求解思路：遍厉列表，然后检索差值，分为两种情况处理，即差值是否为target的一半。
 # https://leetcode.com/problems/two-sum/
 # Runtime: 1256 ms. Your runtime beats 25.56 % of python3 submissions.
 
