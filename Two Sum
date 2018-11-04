@@ -24,3 +24,10 @@ class Solution:
         return solu_index
 
 # https://leetcode.com/problems/two-sum/
+
+"""
+Something learned:
+1. 注意判断循环的里面和外面。
+2. nums.index(delta)可以取到列表中某数的index。
+3. 注意 break 的使用。
+"""
