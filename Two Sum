@@ -10,13 +10,22 @@ class Solution:
         length = len(nums)
         for i in range(length-1):
             delta = target - nums[i]
-            if delta in nums and delta != nums[i]:
-                solu_index.append(i)
-                solu_index.append(nums.index(delta))
-                return solu_index
-                break
-            else:
-                pass
+            if delta in nums:
+                if delta != nums[i]:
+                    solu_index.append(i)
+                    solu_index.append(nums.index(delta))
+                    return solu_index
+                    break
+                else:
+                    nums_del = copy.deepcopy(nums)
+                    del nums_del[i]
+                    if delta in nums_del:
+                        solu_index.append(i)
+                        solu_index.append(nums_del.index(delta)+1)
+                        return solu_index
+                        break
+                    else:
+                        pass   
         if solu_index == []:
             solu_index = 'No two sum solution'
         else:
@@ -30,4 +39,6 @@ Something learned:
 1. 注意判断循环的里面和外面。
 2. nums.index(delta)可以取到列表中某数的index。
 3. 注意 break 的使用。
+4. 注意特殊情况的考虑。然后 Debug 的时候要考虑清楚，别特么解决 A 问题的同时引入 BCDEF 问题。
+5. 注意 Python 中容器赋值、浅拷贝、深拷贝的区别。
 """
