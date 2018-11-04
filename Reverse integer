@@ -1,0 +1,40 @@
+            x_re = int(x_re_str)
+            spli = 2**31-1
+            if x_re > spli:
+                solu = 0
+            else:
+                solu = x_re
+        else:
+            x = abs(x)
+            x_str = str(x)
+            x_lis = list(x_str)
+            x_lis_re = x_lis[::-1]
+            length2 = len(x_lis_re)
+            for i in range(length2):
+                if x_lis_re[i] != 0:
+                    sli = i
+                    break
+                else:
+                    pass
+            x_re_lis = x_lis_re[sli:]
+            x_re_str = "".join(x_re_lis)
+            x_re = int(x_re_str)
+            x_re = -x_re
+            spli = -(2**31)
+            if x_re < spli:
+                solu = 0
+            else:
+                solu = x_re
+        return solu
+        
+        
+# https://leetcode.com/problems/reverse-integer/
+# 思路：将数转变成列表操作。
+# Runtime: 80 ms. Your runtime beats 26.49 % of python3 submissions.
+
+
+"""
+Tips:
+1. Return 不要乱用。
+2. 指数计算是 **，而不是 e。
+"""
