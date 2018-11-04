@@ -23,4 +23,4 @@ class Solution:
             pass
         return solu_index
 
-# get the first propblem done
+# https://leetcode.com/problems/two-sum/
