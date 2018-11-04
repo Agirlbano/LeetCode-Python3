@@ -33,6 +33,7 @@ class Solution:
         return solu_index
 
 # https://leetcode.com/problems/two-sum/
+# Runtime: 1256 ms. Your runtime beats 25.56 % of python3 submissions.
 
 """
 Something learned:
