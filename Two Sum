@@ -1,0 +1,24 @@
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        solu_index = []
+        
+        length = len(nums)
+        for i in range(length-1):
+            delta = target - nums[i]
+            if delta in nums and delta != nums[i]:
+                solu_index.append(i)
+                solu_index.append(nums.index(delta))
+                return solu_index
+                break
+            else:
+                pass
+        if solu_index == []:
+            solu_index = 'No two sum solution'
+        else:
+            pass
+        return solu_index
