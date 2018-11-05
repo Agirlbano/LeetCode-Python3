@@ -1,0 +1,43 @@
+class Solution:
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if strs == []:
+            return ""
+        else:
+            len_lis = len(strs)
+            len_str1 = len(strs[0])
+            lc_prefix = []
+            i = 0
+            while i < len_str1:
+                j = 1
+                while j < len_lis:
+                    try:
+                        if strs[j][i] != strs[0][i]:
+                            break
+                        else:
+                            pass
+                        j += 1
+                    except IndexError:
+                        break
+                if j == len_lis:
+                    lc_prefix.append(strs[0][i])
+                    i += 1
+                else:
+                    break
+            lc_prefix = ''.join(lc_prefix)
+            return lc_prefix
+            
+            
+# https://leetcode.com/problems/longest-common-prefix/
+# 思路：以第一个 str 作为基准，查找符合条件的 profix。
+# Runtime: 56 ms. Your runtime beats 22.55 % of python3 submissions.
+
+"""
+Tips:
+1. 注意捕获和使用报错（或异常）。
+2. 注意特殊情况的处理。
+3. 注意 for 和 while 的区别，需要早停的时候应该使用 while。
+"""
