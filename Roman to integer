@@ -1,0 +1,37 @@
+class Solution:
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        
+        dic = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+        s_lis = list(s)
+        length = len(s_lis)
+        coe = []
+        s_lis_num = []
+        for i in range(length-1):
+            s_lis_num.append(dic[s_lis[i]])
+            if dic[s_lis[i]] < dic[s_lis[i+1]]:
+                coe.append(-1)
+            else:
+                coe.append(1)
+        s_lis_num.append(dic[s_lis[length-1]])
+        coe.append(1)
+        def multi(a,b):
+            return a*b
+        r2int_lis = list(map(multi, s_lis_num, coe))
+        from functools import reduce
+        def add(x,y):
+            return x+y
+        r2int = reduce(add, r2int_lis)
+        return r2int
+        
+        
+# https://leetcode.com/problems/roman-to-integer/
+# 思路：造字典讲字符串转换为对应数字的列表，再根据罗马数字规则造一个系数列表，然后对两个列表求内积。
+# Runtime: 152 ms. Your runtime beats 50.44 % of python3 submissions.
+
+"""
+1. 匿名函数和 map/reduce 的使用不太清白，用的不溜。
+"""
