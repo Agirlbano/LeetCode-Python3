@@ -1,0 +1,24 @@
+class Solution:
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        stack = []
+        mapping = {'}':'{',']':'[',')':'('}
+        for char in s:
+            if char in mapping:
+                top_element = stack.pop() if stack else '#'
+                if top_element != mapping[char]:
+                    return False
+                else:
+                    pass
+            else:
+                stack.append(char)
+        return not stack
+
+
+
+# https://leetcode.com/problems/valid-parentheses/
+# 思路：本质上是使用最里面的开括号必然对应闭括号，但是我自己没想到好的实现方式。只是想到将括号映射成正负数，然后切片 reduce 等于零，不好实现。答案中使用的是 stack 的数据结构来实现。
+# Runtime: 40 ms. Your runtime beats 57.30 % of python3 submissions.
