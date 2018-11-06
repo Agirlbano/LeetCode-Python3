@@ -22,3 +22,14 @@ class Solution:
 # https://leetcode.com/problems/valid-parentheses/
 # 思路：本质上是使用最里面的开括号必然对应闭括号，但是我自己没想到好的实现方式。只是想到将括号映射成正负数，然后切片 reduce 等于零，不好实现。答案中使用的是 stack 的数据结构来实现。
 # Runtime: 40 ms. Your runtime beats 57.30 % of python3 submissions.
+
+
+"""
+Tips:
+1. 看看别人的代码多优美。
+2. Hash 表还是要研究清楚。
+3. Stack 是个好东西。
+4. 看来数据结构是逃不掉的。
+5. char in dic 是指字典中的 key。
+6. return 跟 yield 的不一样在于，return 就结束了，后面的代码不执行了。
+"""
