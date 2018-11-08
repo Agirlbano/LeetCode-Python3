@@ -37,7 +37,7 @@ class Solution:
 # Runtime: 1256 ms. Your runtime beats 25.56 % of python3 submissions.
 
 """
-Tips:
+Notes:
 1. 注意判断循环的里面和外面。
 2. nums.index(delta)可以取到列表中某数的index。
 3. 注意 break 的使用。
