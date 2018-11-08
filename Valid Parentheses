@@ -25,7 +25,7 @@ class Solution:
 
 
 """
-Tips:
+Notes:
 1. 看看别人的代码多优美。
 2. Hash 表还是要研究清楚。
 3. Stack 是个好东西。
