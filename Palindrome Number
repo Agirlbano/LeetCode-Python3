@@ -29,6 +29,6 @@ class Solution:
 # Runtime: 468 ms. Your runtime beats 22.85 % of python3 submissions.
 
 """
-Tips:
+Notes:
 1. 注意对变量做计算后它就变了。
 """
