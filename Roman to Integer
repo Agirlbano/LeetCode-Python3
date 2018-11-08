@@ -33,5 +33,6 @@ class Solution:
 # Runtime: 152 ms. Your runtime beats 50.44 % of python3 submissions.
 
 """
+Notes:
 1. 匿名函数和 map/reduce 的使用不太清白，用的不溜。
 """
