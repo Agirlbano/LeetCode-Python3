@@ -1,0 +1,52 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        head = ListNode(0)
+        node = head
+        
+        if l1 == None:
+            return l2
+        if l2 == None:
+            return l1
+        
+        while l1 != None or l2 != None:
+            if l1 == None:
+                node.next = l2
+                l2 = l2.next
+            elif l2 == None:
+                node.next = l1
+                l1 = l1.next
+            else:
+                if l1.val > l2.val:
+                    node.next = l2
+                    l2 = l2.next
+                else:
+                    node.next = l1
+                    l1 = l1.next
+            node = node.next
+        
+        return head.next 
+        
+    
+# https://leetcode.com/problems/merge-two-sorted-lists
+# 思路：这个思路很简单，理解了上面注释中的 ListNode 类就可以操作。
+# Runtime: 60 ms, faster than 32.39% of Python3 online submissions for Merge Two Sorted Lists.
+
+
+"""
+Notes:
+1. 上面注释中定义的 ListNode 类是已经在这内置的了，可以直接使用。
+2. 通过 .next 可以不断迭代获取后面的节点，最终得到一个 ListNode。
+3. .val 是取当前一个值，.next 相当于取后面所有的值。
+4. while 里面之所以用 or，而不是 and，是因为如果用 and，当其中一个为 None 时，就会停止，导致无法拿到完整的 ListNode。
+"""
