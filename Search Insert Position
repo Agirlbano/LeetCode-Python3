@@ -1,0 +1,28 @@
+class Solution:
+    def searchInsert(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        if target in nums:
+            return nums.index(target)
+        else:
+            i = 0
+            while i < len(nums):
+                if target < nums[i]:
+                    return i
+                i += 1
+            if i == len(nums):
+                return len(nums)
+                
+                
+# https://leetcode.com/problems/search-insert-position/
+# 思路：so easy
+# Runtime: 36 ms, faster than 98.05% of Python3 online submissions for Search Insert Position.
+
+
+"""
+Notes:
+None
+"""
