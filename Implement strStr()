@@ -1,0 +1,46 @@
+class Solution:
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        if needle == None:
+            return 0
+        elif len(needle) > len(haystack):
+            return -1
+        else:
+            i = 0
+            while i < len(haystack) - len(needle) + 1:
+                if haystack[i:i+len(needle)] == needle:
+                    return i
+                    break
+                i += 1
+            if i ==  len(haystack) - len(needle) + 1:
+                return -1
+                
+# https://leetcode.com/problems/implement-strstr/
+# 思路：切片比对。
+# Runtime: 72 ms, faster than 11.32% of Python3 online submissions for Implement strStr().
+
+"""
+Notes:
+1. 注意 Python 切片是左边取，右边不取。
+2. 看了下效率最高的提交结果，发现特么的那些就是写的是人话，完全看不出用了什么算法。
+"""
+
+# 下面是排第一的代码：
+class Solution:
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        if needle!=" ":
+            if needle in haystack:
+                return haystack.index(needle)
+            elif needle not in haystack:
+                return -1
+        else:
+            return 0
