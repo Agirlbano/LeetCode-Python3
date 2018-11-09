@@ -1,0 +1,38 @@
+class Solution:
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        if len(nums) == 0:
+            return 0
+        elif  val == None:
+            return len(nums)
+        else:
+            i = 0
+            j = 0
+            while j < len(nums):
+                if nums[i] != val:
+                    i += 1
+                    j += 1
+                elif nums[i] == val:
+                    if nums[j] != val:
+                        nums[i], nums[j] = nums[j], nums[i]
+                        i += 1
+                        j += 1
+                    else:
+                        j +=1
+        return i
+        
+# https://leetcode.com/problems/remove-element/
+# 思路：使用双指针，调换元素位置。
+# Runtime: 52 ms, faster than 22.31% of Python3 online submissions for Remove Element.
+
+"""
+Notes:
+1. 这里之间应该调换位置，不能用一个元素给另一个元素赋值，不然会出现多余的元素。
+2. 注意 retunr i 是输出长度为 i 的前部分数组，所以 i 不能为 0。
+3. j 也要从 0 开始，不然遇到一个元素的数组 while 就不会执行。
+4. 处理类似问题双指针是个好东西。
+"""
