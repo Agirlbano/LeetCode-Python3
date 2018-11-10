@@ -1,0 +1,58 @@
+class Solution:
+    def countAndSay_Cal(self, lis):
+        import copy
+        lis1 = copy.deepcopy(lis)
+        lis.clear()
+        if lis1 == [1]:
+            lis.append(1)
+            lis.append(1)
+            return lis
+        elif lis1 == [1, 1]:
+            lis.append(2)
+            lis.append(1)
+            return lis
+        else:
+            i = 0
+            j = 0
+            while j < len(lis1):
+                if lis1[j] != lis1[i]:
+                    lis.append(j - i)
+                    lis.append(lis1[i])
+                    i = j
+                j += 1
+            lis.append(j - i)
+            lis.append(lis1[i])
+            return lis
+    def countAndSay_tool(self, m):
+        """
+        :type n: int
+        :rtype: str
+        """
+        lis = []
+        if m == 1:
+            lis.append(1)
+            return lis
+        elif m == 2:
+            lis.append(1)
+            lis.append(1)
+            return lis
+        else:
+            return self.countAndSay_Cal(self.countAndSay_tool(m-1))
+    
+    def countAndSay(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        return "".join('%s' %id for id in self.countAndSay_tool(n))
+        
+        
+# https://leetcode.com/problems/count-and-say
+# 思路：递归。
+# Runtime: 60 ms, faster than 17.31% of Python3 online submissions for Count and Say.
+
+"""
+Notes:
+1. 类里面调用方法需要 self. 。
+2. ''.join()函数要求列表中每一项都得是字符串，不然需要使用 "".join('%s' %id for id in self.countAndSay_tool(n))，即遍历列表的元素，把它转化成字符串。
+"""
