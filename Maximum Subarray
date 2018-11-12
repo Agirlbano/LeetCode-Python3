@@ -1,0 +1,23 @@
+class Solution:
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        for i in range(1, len(nums)):
+            if nums[i-1] > 0:
+                nums[i] += nums[i-1]
+            else:
+                pass
+        return max(nums)
+        
+        
+# https://leetcode.com/problems/maximum-subarray
+# 思路： 区间求得最大值。
+# Runtime: 44 ms, faster than 98.74% of Python3 online submissions for Maximum Subarray.
+
+"""
+Notes:
+1. 时间复杂度和空间复杂度要会算，以后最后在“思路”中给出时间复杂度。
+2. 算法一定要有 trick 思维，要会做变换，就像对偶问题转换一样。
+"""
