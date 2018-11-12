@@ -1,0 +1,19 @@
+class Solution:
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        sq = x**0.5
+        return int(sq)
+        
+        
+# https://leetcode.com/problems/sqrtx/
+# 思路：直接调用 ** 计算。
+# Runtime: 68 ms, faster than 56.76% of Python3 online submissions for Sqrt(x).
+
+
+"""
+Notes:
+1. 这种对编程思想没什么提高的题目就不浪费时间了。
+"""
