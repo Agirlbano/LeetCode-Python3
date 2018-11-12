@@ -1,0 +1,23 @@
+class Solution:
+    def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        a = int(a, 2)
+        b = int(b, 2)
+        s = a + b
+        s = bin(s)
+        return s[2:]
+        
+        
+# https://leetcode.com/problems/add-binary/
+# 思路：字符串转换成10进制数相加，再转换为二进制数的字符串。
+# Runtime: 40 ms, faster than 99.92% of Python3 online submissions for Add Binary.
+
+"""
+Notes:
+1. 注意函数的输入、输出、参数。
+2. 注意函数的返回值。
+"""
