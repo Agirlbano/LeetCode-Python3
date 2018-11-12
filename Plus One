@@ -1,0 +1,24 @@
+class Solution:
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        if digits == [0]:
+            return [1]
+        else:
+            s = ''.join('%s' %id for id in digits)
+            s = int(s)
+            s = s + 1
+            return list(map(int, str(s)))
+            
+            
+# https://leetcode.com/problems/plus-one/
+# 思路：转换成数字处理加一
+# Runtime: 48 ms, faster than 38.98% of Python3 online submissions for Plus One.
+
+"""
+Notes：
+1. 注意 list(map(int, str(s))) 的使用。
+2. 注意 ''.join('%s' %id for id in digits) 的使用。
+"""
