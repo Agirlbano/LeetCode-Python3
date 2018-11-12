@@ -1,0 +1,25 @@
+class Solution:
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if s == '':
+            return 0
+        elif s.isspace():
+            return 0
+        else:
+            s1 = s.strip()
+            l = s1.split()
+            return len(l[-1])
+            
+            
+# https://leetcode.com/problems/length-of-last-word/
+# 思路：截取出最后一个单词，并返回其长度。
+# Runtime: 36 ms, faster than 91.45% of Python3 online submissions for Length of Last Word.
+
+"""
+1. Python 果然是高级语言，写成人话效率反而高。
+2. 要熟悉字符串的处理及内置方法。
+3. 注意特殊情况的处理。
+"""
