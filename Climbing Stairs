@@ -1,0 +1,33 @@
+class Solution:
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n == 0:
+            return 1
+        elif n == 1:
+            return 1
+        else:
+            i = n
+            a = 1
+            b = 1
+            while i > 1:
+                s = a + b 
+                a = b
+                b = s
+                i -= 1
+            return s
+            
+            
+# https://leetcode.com/problems/climbing-stairs/
+# 思路：动态规划。
+# Runtime: 36 ms. Your run思路：动态规划。time beats 73.58 % of python3 submissions.
+
+
+"""
+Notes:
+1. 看动态规划，补了 functools.wraps，然后补了 functools，然后补了装饰器，然后补了闭包等 Python 的相关编程知识。
+2. 其实 Python 程序语言，有的功能本身就是很好的算法（比如闭包），所以在刷算法题的同时也要补 Python 知识点。
+3. 链式学习，中心发散，贪婪算法，不过也要注意节奏。
+"""
