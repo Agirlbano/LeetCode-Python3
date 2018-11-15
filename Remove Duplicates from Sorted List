@@ -1,0 +1,37 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def deleteDuplicates(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head: return []
+        root = head
+        current = head.next
+        prev = head
+        while current:
+            if prev.val == current.val:
+                prev.next = current.next
+                current = current.next
+            else:
+                prev = current
+                
+        return root
+        
+        
+# https://leetcode.com/problems/remove-duplicates-from-sorted-list
+# 思路：略。
+# Runtime: 64 ms, faster than 40.49% of Python3 online submissions for Remove Duplicates from Sorted List.
+
+
+"""
+1. ListNode 还是不太会玩。
+2. .next 为节点指针
+3. .val 为节点取值
+4. 节点指针的起点是当前节点，由当前节点指向下一个节点，所以 node.next.val 为下一节点的取值，但是怎么取到整个链表呢？不懂。
+"""
