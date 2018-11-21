@@ -1,0 +1,23 @@
+class Solution:
+    def merge(self, nums1, m, nums2, n):
+        """
+        :type nums1: List[int]
+        :type m: int
+        :type nums2: List[int]
+        :type n: int
+        :rtype: void Do not return anything, modify nums1 in-place instead.
+        """
+        nums1[:]=nums1[0:m]
+        nums1.extend(nums2)
+        nums1.sort()
+        
+# https://leetcode.com/problems/merge-sorted-array/
+# 思路：先把两个数组相接，然后排序。
+# Runtime: 60 ms, faster than 14.08% of Python3 online submissions for Merge Sorted Array.
+
+
+
+"""
+Notes:
+1. 想不明白两段有序，对全局排序有什么意义，因此直接简单粗暴处理。
+"""
