@@ -1,0 +1,29 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def isSameTree(self, p, q):
+        """
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: bool
+        """
+        if p and q:
+            return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        return p is q
+        
+        
+        
+# https://leetcode.com/problems/same-tree/
+# 思路：递归。
+# Runtime: 72 ms, faster than 2.89% of Python3 online submissions for Same Tree.
+
+"""
+Notes:
+1. 还没看二叉树相关的知识，就先简单粗暴解决问题吧。
+2. 感觉其实 LeetCode 上 Python 的 Runtime 并不是很靠谱。
+"""
